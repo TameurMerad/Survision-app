@@ -68,4 +68,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("androidx.core:core-splashscreen:1.0.1")
 
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.27.0")
+
+
 }

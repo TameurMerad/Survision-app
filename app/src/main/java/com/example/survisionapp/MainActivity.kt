@@ -9,28 +9,30 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.survisionapp.ui.theme.SurvisionappTheme
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Thread.sleep(4000)
-        installSplashScreen()
+
+
         setContent {
-            SurvisionappTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+                val statbar = rememberSystemUiController()
+                statbar.setStatusBarColor(Color(ContextCompat.getColor(this,R.color.orange_main)))
+
         }
     }
 }
+
+
+
+
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
@@ -40,10 +42,3 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SurvisionappTheme {
-        Greeting("Android")
-    }
-}
