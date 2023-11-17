@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Survisionapp" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.Starting" parent="Theme.SplashScreen">
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="android:windowSplashScreenBackground">#F24606</item>
+        <item name="postSplashScreenTheme">@style/Theme.Survisionapp</item>
+    </style>
+</resources>
+
