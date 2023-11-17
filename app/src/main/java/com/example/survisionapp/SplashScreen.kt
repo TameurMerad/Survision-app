@@ -50,6 +50,7 @@ class SplashScreen : ComponentActivity() {
                 animationSpec = tween(1200)
                 )
             startActivity(Intent(this@SplashScreen , MainActivity::class.java))
+            finish()
         })
         Box(
             modifier = Modifier.fillMaxSize(),
