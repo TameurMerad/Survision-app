@@ -27,15 +27,29 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SplashScreen : ComponentActivity() {
+    @SuppressLint("CoroutineCreationDuringComposition")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
             setContent {
                 val statbar = rememberSystemUiController()
                 statbar.setStatusBarColor(Color(ContextCompat.getColor(this,R.color.orange_main)))
                 splashScreen()
+
+
+
+                MainScope().launch (Dispatchers.IO){
+
+
+                }
+
+
+
             }
 
     }

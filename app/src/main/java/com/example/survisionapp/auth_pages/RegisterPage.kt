@@ -61,24 +61,27 @@ fun Register (){
 //                },
 //
 //            )
+
+
             OutlinedTextField(
                 value = textfieldstate,
                 onValueChange = {textfieldstate = it },
                 placeholder = {
                     Text(text = "write here")
                 },
+                colors = outlinedTextFieldColors(
+                    focusedBorderColor = Color.White,
+                    unfocusedBorderColor = Color.White,
+                    cursorColor = Color.LightGray)
+                    ,
                 modifier = Modifier
                     .fillMaxWidth()
                     .clip( RoundedCornerShape(20.dp))
                     .shadow(5.dp)
                     .background(Color.White)
-                ,
-                colors = outlinedTextFieldColors(
-                    focusedBorderColor = Color.White,
-                    unfocusedBorderColor = Color.White,
-                    cursorColor = Color.LightGray
 
-                )
+
+
             )
             
             
