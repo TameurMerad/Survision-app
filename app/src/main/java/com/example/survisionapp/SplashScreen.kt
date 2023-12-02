@@ -41,8 +41,6 @@ class SplashScreen : ComponentActivity() {
                 statbar.setStatusBarColor(Color(ContextCompat.getColor(this,R.color.orange_main)))
                 splashScreen()
 
-
-
                 MainScope().launch (Dispatchers.IO){
 
 
@@ -51,7 +49,6 @@ class SplashScreen : ComponentActivity() {
 
 
             }
-
     }
     @SuppressLint("RememberReturnType")
     @Composable

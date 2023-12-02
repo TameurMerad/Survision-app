@@ -23,8 +23,8 @@ class MainActivity : ComponentActivity() {
 
 
         setContent {
-                val statbar = rememberSystemUiController()
-                statbar.setStatusBarColor(Color(ContextCompat.getColor(this,R.color.orange_main)))
+                val colorStatusBar = Color(ContextCompat.getColor(this,R.color.orange_main))
+                rememberSystemUiController().setStatusBarColor(colorStatusBar)
                 Register()
         }
     }
