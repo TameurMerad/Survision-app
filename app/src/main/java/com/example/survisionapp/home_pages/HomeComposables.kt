@@ -4,7 +4,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -25,14 +28,12 @@ import com.example.survisionapp.ui.theme.orangeMain
 @Composable
 fun WithdrawCard (Amount:Int){
     Card (
-        modifier = Modifier
-            .padding(20.dp),
         shape = RoundedCornerShape(15.dp),
         colors = CardDefaults.cardColors(
             contentColor = orangeMain,
             containerColor = orangeMain
         ),
-        elevation = CardDefaults.cardElevation(22.dp)
+        elevation = CardDefaults.cardElevation(10.dp)
 
     ) {
         Column(
@@ -40,12 +41,14 @@ fun WithdrawCard (Amount:Int){
             verticalArrangement = Arrangement.SpaceEvenly,
             modifier = Modifier.padding(15.dp)
         ) {
+
             Text(
-                text =" ",
-                fontWeight = FontWeight.Bold,
-                fontSize = 24.sp,
+                text ="",
+                fontWeight = FontWeight.SemiBold,
+                fontSize = 19.sp,
                 modifier = Modifier.fillMaxWidth(),
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = Color.White
             )
             Text(
                 text ="2,000 Da",
@@ -83,7 +86,7 @@ fun SurveysAvailableCard (num:Int){
             contentColor = orangeMain,
             containerColor = orangeMain
         ),
-        elevation = CardDefaults.cardElevation(22.dp)
+        elevation = CardDefaults.cardElevation(10.dp)
 
     ) {
         Row(
@@ -116,9 +119,57 @@ fun SurveysAvailableCard (num:Int){
 }
 
 
+@Composable
+fun SurveyNewsItem(title:String,description:String ){
+        Card (
+            shape = RoundedCornerShape(15.dp),
+            elevation = CardDefaults.cardElevation(3.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = Color.White
+            ),
+
+            ){
+            Column (
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(15.dp)
+            ){
+                Text(
+                    text = title,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 19.sp,
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Start,
+                    color = Color.Black
+                )
+
+
+
+                Text(
+                    text = description,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Light,
+                    textAlign = TextAlign.Start,
+                    modifier = Modifier.fillMaxWidth(),
+                    color = Color.Black
+                )
+
+
+            }
+        }
+    }
+
+
+
+
+
+
+
 
 @Preview
 @Composable
 fun Previeww (){
-    SurveysAvailableCard(num = 5)
+
+
 }

@@ -8,18 +8,25 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ListItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -35,7 +42,39 @@ fun Home(location:String){
     Scaffold {
         Box(modifier = Modifier
             .fillMaxSize()
-            .background(Color.LightGray))
+            .padding(15.dp)
+           ){
+
+
+
+
+            Column (Modifier.verticalScroll(rememberScrollState())){
+                Spacer(modifier = Modifier.height(70.dp))
+                WithdrawCard(Amount = 2000)
+                Spacer(modifier = Modifier.height(10.dp))
+                SurveysAvailableCard(num = 5)
+                Spacer(modifier = Modifier.height(9.dp))
+
+//                LazyColumn(){
+//                    items(itemList){
+//                        SurveyNewsItem(title = it.title, description =it.description )
+//
+//                    }
+//                }
+                Column(){
+                    for (index in itemList){
+                        SurveyNewsItem(title = index.title, description =index.description )
+                        Spacer(modifier = Modifier.height(7.dp))
+
+                    }
+                }
+
+            }
+
+
+
+
+        }
 
         
         
@@ -78,7 +117,8 @@ fun Home(location:String){
                 }
             }
         }
-        
+
+
         
         
     }
