@@ -27,6 +27,7 @@ class MainActivity : ComponentActivity() {
                 val colorStatusBar = Color(ContextCompat.getColor(this,R.color.orange_main))
                 rememberSystemUiController().setStatusBarColor(colorStatusBar)
                 Home(location = "Batna")
+
         }
     }
 }
@@ -49,6 +50,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview
 @Composable
 fun Preview (){
-    Home(location = "batna")
+    Home(location = "Azazga")
+
 }
 

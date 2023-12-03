@@ -18,11 +18,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.survisionapp.R
 import com.example.survisionapp.ui.theme.orangeMain
 
 @Composable
@@ -45,6 +48,7 @@ fun WithdrawCard (Amount:Int){
             Text(
                 text ="",
                 fontWeight = FontWeight.SemiBold,
+                fontFamily = FontFamily(Font(R.font.gotham_bold)),
                 fontSize = 19.sp,
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center,
@@ -53,6 +57,7 @@ fun WithdrawCard (Amount:Int){
             Text(
                 text ="2,000 Da",
                 fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily(Font(R.font.gotham_bold)),
                 fontSize = 48.sp,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -63,6 +68,7 @@ fun WithdrawCard (Amount:Int){
             Text(
                 text ="withdraw on 18/07",
                 fontWeight = FontWeight.SemiBold,
+                fontFamily = FontFamily(Font(R.font.gotham_bold)),
                 fontSize = 19.sp,
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center,
@@ -137,7 +143,7 @@ fun SurveyNewsItem(title:String,description:String ){
             ){
                 Text(
                     text = title,
-                    fontWeight = FontWeight.Bold,
+                    fontWeight = FontWeight.M,
                     fontSize = 19.sp,
                     modifier = Modifier.fillMaxWidth(),
                     textAlign = TextAlign.Start,
