@@ -29,7 +29,7 @@ import com.example.survisionapp.R
 import com.example.survisionapp.ui.theme.orangeMain
 
 @Composable
-fun WithdrawCard (Amount:Int){
+fun WithdrawCard (Amount:Int , WhithdrawDate:String){
     Card (
         shape = RoundedCornerShape(15.dp),
         colors = CardDefaults.cardColors(
@@ -55,7 +55,7 @@ fun WithdrawCard (Amount:Int){
                 color = Color.White
             )
             Text(
-                text ="2,000 Da",
+                text ="$Amount DA",
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily(Font(R.font.gotham_bold)),
                 fontSize = 48.sp,
@@ -66,7 +66,7 @@ fun WithdrawCard (Amount:Int){
                 color = Color.White
                 )
             Text(
-                text ="withdraw on 18/07",
+                text ="withdraw on $WhithdrawDate",
                 fontWeight = FontWeight.SemiBold,
                 fontFamily = FontFamily(Font(R.font.gotham_bold)),
                 fontSize = 19.sp,
@@ -74,6 +74,7 @@ fun WithdrawCard (Amount:Int){
                 textAlign = TextAlign.Center,
                 color = Color.White
             )
+            Spacer(modifier = Modifier.height(10.dp))
 
 
         }
@@ -143,21 +144,25 @@ fun SurveyNewsItem(title:String,description:String ){
             ){
                 Text(
                     text = title,
-                    fontWeight = FontWeight.M,
+                    fontFamily = FontFamily(Font(R.font.gotham_bold)),
+                    fontWeight = FontWeight.Bold,
                     fontSize = 19.sp,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(5.dp),
                     textAlign = TextAlign.Start,
                     color = Color.Black
                 )
 
-
-
                 Text(
                     text = description,
+                    fontFamily = FontFamily(Font(R.font.gotham_light)),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Light,
                     textAlign = TextAlign.Start,
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(5.dp),
                     color = Color.Black
                 )
 
@@ -176,6 +181,6 @@ fun SurveyNewsItem(title:String,description:String ){
 @Preview
 @Composable
 fun Previeww (){
-
+    WithdrawCard(Amount = 1000, WhithdrawDate = "12/12")
 
 }

@@ -1,8 +1,8 @@
-package com.example.survisionapp.home_pages
+package com.example.survisionapp.models.home_page_models
 
 data class Item(val title: String, val description: String)
 
-val itemList: List<Item> = listOf(
+val itemList: List<Item> = mutableListOf(
     Item("Revolutionary Innovation", "Experience the forefront of innovation with our revolutionary product."),
     Item("Exceptional Craftsmanship", "Each item crafted with exceptional attention to detail and quality."),
     Item("Unmatched Performance", "Achieve unparalleled performance with our cutting-edge technology."),

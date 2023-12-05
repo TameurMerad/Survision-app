@@ -35,23 +35,21 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.survisionapp.R
+import com.example.survisionapp.models.home_page_models.Item
+import com.example.survisionapp.models.home_page_models.itemList
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Home(location:String){
+fun Home(location:String,amount:Int, withdrawDate:String,itemsList: MutableList<Item>){
     Scaffold {
         Box(modifier = Modifier
             .fillMaxSize()
             .padding(15.dp)
            ){
-
-
-
-
             Column (Modifier.verticalScroll(rememberScrollState())){
                 Spacer(modifier = Modifier.height(70.dp))
-                WithdrawCard(Amount = 2000)
+                WithdrawCard(amount,withdrawDate)
                 Spacer(modifier = Modifier.height(10.dp))
                 SurveysAvailableCard(num = 5)
                 Spacer(modifier = Modifier.height(9.dp))
@@ -63,7 +61,7 @@ fun Home(location:String){
 //                    }
 //                }
                 Column(){
-                    for (index in itemList){
+                    for (index in itemsList){
                         SurveyNewsItem(title = index.title, description =index.description )
                         Spacer(modifier = Modifier.height(7.dp))
 
@@ -71,22 +69,16 @@ fun Home(location:String){
                 }
 
             }
-
-
-
-
         }
 
         
-        
+// app bar box
         Box (
             modifier = Modifier
                 .fillMaxWidth()
                 .background(Color.White),
             contentAlignment = Alignment.TopCenter
         ){
-            Column {
-//                Spacer(modifier = Modifier.height(25.dp))
                 Row (
                     horizontalArrangement = Arrangement.SpaceBetween,
                     modifier = Modifier
@@ -109,7 +101,7 @@ fun Home(location:String){
                                 .padding(end = 5.dp)
                             )
                         Text(text = location,
-                            fontFamily = FontFamily(Font(R.font.gotham_bold)),
+                            fontFamily = FontFamily(Font(R.font.gotham_medium)),
                             fontWeight = FontWeight.Medium,
                             fontSize = 19.sp
                             )
@@ -117,12 +109,9 @@ fun Home(location:String){
 
 
                 }
-            }
+
         }
 
-
-        
-        
     }
     
     
@@ -133,5 +122,5 @@ fun Home(location:String){
 @Preview
 @Composable
 fun Preview (){
-    Text(text = "kjgng", fontFamily = FontFamily(Font(R.font.gotham_bold)))
+    Home(location = "Azazga",5000,"15/04", itemList.toMutableList())
 }
