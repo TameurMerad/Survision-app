@@ -1,4 +1,4 @@
-package com.example.survisionapp.Withdraw_pages
+package com.example.survisionapp.User_pages
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
@@ -15,12 +15,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.survisionapp.Withdraw_pages.InfoCard
 import com.example.survisionapp.globale_composables.BigButton
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun WithdrawPage() {
+fun UserPage() {
     Scaffold {
         Box(
             modifier = Modifier
@@ -29,28 +30,29 @@ fun WithdrawPage() {
         ) {
             Column(Modifier.verticalScroll(rememberScrollState())) {
                 Spacer(modifier = Modifier.height(70.dp))
-                InfoCardBig( "2000")
+                InfoCard("Name", "Soufyan Merad")
                 Spacer(modifier = Modifier.height(10.dp))
-                InfoCard("All Time", "92000 DA")
+                UserDocumentsCard(subtitle = "documents", title ="Not Verified" , onC = {})
                 Spacer(modifier = Modifier.height(10.dp))
-                InfoCard("Average Per Month", "50000 DA")
+                InfoCard("Phone", "0675772266")
                 Spacer(modifier = Modifier.height(10.dp))
-                InfoCard("Waiting", "30000 DA")
+                InfoCard("Email", "t_merad@survision.io")
                 Spacer(modifier = Modifier.height(10.dp))
-                InfoCard("Withdrawed", "200000 DA")
-                Spacer(modifier = Modifier.height(18.dp))
-                BigButton("Withdraw", onClick = {})
-                
+                InfoCard("Total Withdrawed", "95000 DA")
+                Spacer(modifier = Modifier.height(10.dp))
+                InfoCard("Total Responses", "200")
+                Spacer(modifier = Modifier.height(10.dp))
+                BigButton("Edit", onClick = {})
+
+
             }
+
         }
     }
-
-
-
 }
 
 @Preview
 @Composable
-fun PreviewWithdrawPage() {
-    WithdrawPage()
+fun PreviewUserPage() {
+    UserPage()
 }

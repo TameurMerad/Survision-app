@@ -28,7 +28,9 @@ fun BigButton (title : String , onClick :()->Unit){
             .clickable {
                 onClick()
 
-            },
+            }
+            .padding(bottom = 10.dp)
+        ,
         shape = RoundedCornerShape(15.dp),
         colors = CardDefaults.cardColors(
             contentColor = orangeMain,
