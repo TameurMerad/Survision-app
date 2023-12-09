@@ -87,8 +87,55 @@ fun UserDocumentsCard(subtitle:String,title:String , onC: () -> Unit ){
     }
 }
 
+
+
+
+@Composable
+fun UploadDocumentCard(title: String, onClick:()-> Unit) {
+
+    Card(
+        modifier = Modifier
+            .clickable {
+                onClick()
+            },
+        shape = RoundedCornerShape(15.dp),
+        elevation = CardDefaults.cardElevation(3.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color.White
+        ),
+
+        ) {
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+
+            Text(text = title,
+                fontFamily = FontFamily(Font(R.font.gotham_medium)),
+                fontWeight = FontWeight(500),
+                fontSize = 14.sp,
+                modifier = Modifier
+                    .padding(5.dp),
+                textAlign = TextAlign.Start,
+                color = Color.Black
+            )
+            Icon(painter = painterResource(id = R.drawable.upload_icon), contentDescription = null , modifier =  Modifier.padding( 9.dp))
+
+
+
+        }
+
+    }
+}
+
+
+
 @Preview
 @Composable
 fun UserDocumentsCardPreview(){
-    UserDocumentsCard(subtitle = "Your documents", title = "Upload your documents", onC = {})
+    UploadDocumentCard(title = "Upload", onClick = {})
 }
