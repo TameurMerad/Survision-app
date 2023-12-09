@@ -30,8 +30,6 @@ class MainActivity : ComponentActivity() {
                 Home(location = "Amizour", amount =2000  , withdrawDate ="12/02" , itemsList = itemList.toMutableList() )
 
 
-
-
         }
     }
 }

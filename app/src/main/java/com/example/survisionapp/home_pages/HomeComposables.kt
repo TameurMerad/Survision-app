@@ -1,5 +1,7 @@
 package com.example.survisionapp.home_pages
 
+import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -29,6 +31,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.Font
@@ -186,11 +189,13 @@ fun SurveyNewsItem(title:String,description:String ){
 
 
 @Composable
+
 fun BtmNavBar(
     itemList: List<Painter>,
     modifier: Modifier = Modifier,
     inialSelectedItemIndex: Int = 0
 ) {
+    val context = LocalContext.current
     var selectedItemIndex by remember { mutableStateOf(inialSelectedItemIndex) }
     Row(
         horizontalArrangement = Arrangement.SpaceAround,
@@ -203,11 +208,13 @@ fun BtmNavBar(
         itemList.forEachIndexed { index, btmNavData ->
             BtmNavBarItem(
                 item = btmNavData,
-                isSelcted = index == selectedItemIndex,
-
-            ) {
-                selectedItemIndex = index
-            }
+                isSelected = index == selectedItemIndex,
+                onItemClick = {
+                    selectedItemIndex = index
+                    Log.d("nmiii", "BtmNavBar: $index")
+                    Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show()
+                }
+            )
         }
 
 
@@ -220,24 +227,19 @@ fun BtmNavBar(
 @Composable
 fun BtmNavBarItem(
     item: Painter,
-    isSelcted: Boolean = false,
+    isSelected: Boolean = false,
     onItemClick: () -> Unit
 ) {
             Icon(
                 painter = item,
                 contentDescription = "icon",
-                tint = if (isSelcted) orangeMain else Color.Black,
+                tint = if (isSelected) orangeMain else Color.Black,
                 modifier = Modifier
-                    .size(30.dp)
+                    .size(34.dp)
                     .clickable {
                         onItemClick()
                     }
             )
-    
-    
-
-    
-
 
 }
 
