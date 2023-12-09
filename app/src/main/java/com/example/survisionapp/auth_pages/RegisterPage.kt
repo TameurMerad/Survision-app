@@ -26,6 +26,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.survisionapp.R
+import com.example.survisionapp.globale_composables.BigButton
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -75,7 +76,7 @@ val policyText = buildAnnotatedString {
             Spacer(modifier = Modifier.fillMaxHeight(0.02f))
             AuthCheckBox(policyText,true)
             Spacer(modifier = Modifier.fillMaxHeight(0.1f))
-            SignButton(text = "Sign Up")
+            BigButton(title = "Register", onClick = {})
 //            Spacer(modifier = Modifier.fillMaxHeight(0.1f))
 //            Text(
 //                modifier = Modifier.fillMaxWidth(),

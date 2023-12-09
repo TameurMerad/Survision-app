@@ -22,6 +22,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.survisionapp.R
+import com.example.survisionapp.globale_composables.BigButton
 
 @Composable
 fun Login (){
@@ -49,7 +50,7 @@ fun Login (){
                 )
             Spacer(modifier = Modifier.fillMaxHeight(0.02f))
 
-            SignButton(text = "Sign In")
+            BigButton(title = "Login", onClick = {})
 
 
 

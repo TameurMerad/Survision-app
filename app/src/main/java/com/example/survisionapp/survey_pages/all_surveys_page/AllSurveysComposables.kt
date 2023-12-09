@@ -31,39 +31,6 @@ import com.example.survisionapp.R
 import com.example.survisionapp.ui.theme.PurpleGrad
 import com.example.survisionapp.ui.theme.orangeMain
 
-@Composable
-fun GeneralGuidButton (onClick :()->Unit){
-    Card(
-
-        shape = RoundedCornerShape(15.dp),
-        colors = CardDefaults.cardColors(
-            contentColor = orangeMain,
-            containerColor = orangeMain
-        ),
-        elevation = CardDefaults.cardElevation(13.dp)
-
-    ) {
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(15.dp),
-            contentAlignment = Alignment.Center
-
-        ){
-            Text(
-                text ="Surveys Available",
-                fontWeight = FontWeight.SemiBold,
-                fontSize = 19.sp,
-                textAlign = TextAlign.Start,
-                color = Color.White
-            )
-
-
-        }
-    }
-}
-
-
 
 
 
@@ -79,12 +46,12 @@ fun SurveyGoCard (name:String, responseAvailable:String , time:String,price:Stri
             contentColor = Color.Black,
             containerColor = Color.White
         ),
-        elevation = CardDefaults.cardElevation(10.dp),
+        elevation = CardDefaults.cardElevation(8.dp),
         modifier = Modifier
             .fillMaxWidth()
-            .padding(10.dp)
+            .padding(bottom = 10.dp)
             .border(
-                1.dp,
+                2.dp,
                 Brush.horizontalGradient(listOf(Color(0xFF9BE3F2), PurpleGrad)),
                 RoundedCornerShape(15.dp)
             )
@@ -99,15 +66,15 @@ fun SurveyGoCard (name:String, responseAvailable:String , time:String,price:Stri
             Column(
                 verticalArrangement = Arrangement.SpaceEvenly,
             ){
-                Text(text = name,fontSize = 18.sp, fontFamily = FontFamily(Font(R.font.gotham_bold)) , modifier = Modifier.padding( 5.dp))
-                Text(text = "$responseAvailable Responses Available",fontSize = 14.sp, fontFamily = FontFamily(Font(R.font.gotham_light)), modifier = Modifier.padding( 5.dp))
+                Text(text = name,fontSize = 18.sp, fontFamily = FontFamily(Font(R.font.gotham_medium)) , fontWeight = FontWeight(800), color = Color.Black, modifier = Modifier.padding( 5.dp))
+                Text(text = "$responseAvailable Responses Available",fontSize = 14.sp, fontFamily = FontFamily(Font(R.font.gotham_medium)), fontWeight = FontWeight(300), color = Color(0xFF585858), modifier = Modifier.padding( 5.dp))
                 Row (modifier = Modifier.padding( 5.dp)){
-                    Text(text = "$time min",fontSize = 14.sp, fontFamily = FontFamily(Font(R.font.gotham_light)) , modifier = Modifier.padding(end = 5.dp) )
-                    Text(text = "$price DA / person",fontSize = 14.sp, fontFamily = FontFamily(Font(R.font.gotham_light)))
+                    Text(text = "$time min",fontSize = 14.sp, fontFamily = FontFamily(Font(R.font.gotham_medium)), fontWeight = FontWeight(300), color = Color(0xFF585858) , modifier = Modifier.padding(end = 5.dp) )
+                    Text(text = "$price DA / person",fontSize = 14.sp, fontFamily = FontFamily(Font(R.font.gotham_medium)), fontWeight = FontWeight(300), color = Color(0xFF585858))
                 }
             }
 
-            Icon(painter = painterResource(id = R.drawable.go_icon), contentDescription = null , modifier = Modifier.padding( 5.dp))
+            Icon(painter = painterResource(id = R.drawable.go_icon), contentDescription = null , modifier = Modifier.padding( 8.dp))
 
 
         }

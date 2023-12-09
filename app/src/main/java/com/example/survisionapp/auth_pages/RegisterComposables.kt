@@ -107,22 +107,3 @@ fun AuthCheckBox(text: AnnotatedString, checked : Boolean){
 
 }
 
-@Composable
-fun SignButton (text:String){
-    Button (
-        onClick = {},
-        modifier = Modifier.fillMaxWidth(),
-        colors = ButtonDefaults.buttonColors(
-            containerColor = Color(0xFFF26E23),
-            contentColor = Color.White
-        ),
-        shape = RoundedCornerShape(12.dp),
-        elevation = ButtonDefaults.buttonElevation(20.dp)
-
-
-        ){
-        Text(text = text, fontWeight = FontWeight.Bold, fontSize = 20.sp)
-
-    }
-
-}

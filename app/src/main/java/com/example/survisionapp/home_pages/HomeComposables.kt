@@ -172,14 +172,14 @@ fun SurveyNewsItem(title:String,description:String ){
 
                 Text(
                     text = description,
-                    fontFamily = FontFamily(Font(R.font.gotham_light)),
+                    fontFamily = FontFamily(Font(R.font.gotham_medium)),
+                    fontWeight = FontWeight(300),
+                    color = Color(0xFF585858),
                     fontSize = 16.sp,
-                    fontWeight = FontWeight.Light,
                     textAlign = TextAlign.Start,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(5.dp),
-                    color = Color.Black
                 )
 
 
@@ -251,12 +251,6 @@ fun BtmNavBarItem(
 @Preview
 @Composable
 fun Previeww ( ){
-    BtmNavBar(itemList = listOf<Painter>(
-        painterResource(id = R.drawable.home),
-        painterResource(id = R.drawable.survey_icon),
-        painterResource(id = R.drawable.dollar_sign_icon),
-        painterResource(id = R.drawable.user_icon)
-    )
-    )
+    SurveyNewsItem(title = "svfvlkfvmlbfkl", description ="dfd dmnv dkcvbkjfdv djszjldv jfde vif vjlf jv dfj " )
 
 }
