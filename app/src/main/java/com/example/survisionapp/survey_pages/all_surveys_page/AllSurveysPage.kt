@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.survisionapp.globale_composables.BigButton
+import com.example.survisionapp.home_pages.SurveyNewsItem
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -31,12 +32,24 @@ fun AllSurveysPage () {
                 Spacer(modifier = Modifier.height(70.dp))
                 BigButton(title = "General Guide" , onClick = {})
                 Spacer(modifier = Modifier.height(10.dp))
-                SurveyGoCard(name = "My First Survey" , responseAvailable = "15" , time ="5" , price ="200" , onClick = {})
+                Column(){
+                    for (index in allSurveysList){
+                        SurveyGoCard(name = index.name , responseAvailable = index.responseAvailable , time = index.time , price = index.price , onClick = {})
+                        Spacer(modifier = Modifier.height(7.dp))
+
+
+                    }
+                }
 
             }
         }
     }
 }
+
+
+
+
+
 @Preview(showBackground = true)
 @Composable
 fun PreviewAllSurveysPage() {

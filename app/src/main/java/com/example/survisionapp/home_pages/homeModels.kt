@@ -1,4 +1,4 @@
-package com.example.survisionapp.models.home_page_models
+package com.example.survisionapp.home_pages
 
 data class Item(val title: String, val description: String)
 

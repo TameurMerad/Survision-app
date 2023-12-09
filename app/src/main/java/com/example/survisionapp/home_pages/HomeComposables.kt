@@ -210,9 +210,10 @@ fun BtmNavBar(
                 item = btmNavData,
                 isSelected = index == selectedItemIndex,
                 onItemClick = {
-                    selectedItemIndex = index
-                    Log.d("nmiii", "BtmNavBar: $index")
-                    Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show()
+                    selectedItemIndex = index // to do : navigate to the selected screen
+
+
+
                 }
             )
         }
