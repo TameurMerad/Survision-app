@@ -6,6 +6,7 @@ import android.graphics.drawable.Animatable
 import android.graphics.drawable.PaintDrawable
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.Animatable
@@ -42,11 +43,11 @@ class SplashScreen : ComponentActivity() {
                 splashScreen()
 
                 MainScope().launch (Dispatchers.IO){
-
+                    runOnUiThread {
+                        Toast.makeText(this@SplashScreen, "ydk fi zbi", Toast.LENGTH_SHORT).show()
+                    }
 
                 }
-
-
 
             }
     }

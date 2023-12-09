@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.survisionapp.auth_pages.Register
 import com.example.survisionapp.home_pages.Home
+import com.example.survisionapp.models.home_page_models.itemList
 import com.example.survisionapp.ui.theme.SurvisionappTheme
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
@@ -26,7 +27,7 @@ class MainActivity : ComponentActivity() {
         setContent {
                 val colorStatusBar = Color(ContextCompat.getColor(this,R.color.orange_main))
                 rememberSystemUiController().setStatusBarColor(colorStatusBar)
-
+                Home(location = "Amizour", amount =2000  , withdrawDate ="12/02" , itemsList = itemList.toMutableList() )
 
 
 

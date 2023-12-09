@@ -112,6 +112,24 @@ fun Home(location:String,amount:Int, withdrawDate:String,itemsList: MutableList<
 
         }
 
+
+        Box(modifier = Modifier
+            .fillMaxSize()
+            ,
+            contentAlignment = Alignment.BottomEnd ){
+            BtmNavBar(itemList = listOf(
+                painterResource(id = R.drawable.home),
+                painterResource(id = R.drawable.survey_icon),
+                painterResource(id = R.drawable.dollar_sign_icon),
+                painterResource(id = R.drawable.user_icon)
+            ),
+                modifier = Modifier.height(70.dp)
+
+            )
+        }
+
+
+
     }
     
     
