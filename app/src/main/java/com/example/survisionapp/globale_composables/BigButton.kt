@@ -1,5 +1,6 @@
 package com.example.survisionapp.globale_composables
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -23,7 +24,11 @@ import com.example.survisionapp.ui.theme.orangeMain
 @Composable
 fun BigButton (title : String , onClick :()->Unit){
     Card(
+        modifier = Modifier
+            .clickable {
+                onClick()
 
+            },
         shape = RoundedCornerShape(15.dp),
         colors = CardDefaults.cardColors(
             contentColor = orangeMain,

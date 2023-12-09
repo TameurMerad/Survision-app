@@ -23,7 +23,7 @@ import com.example.survisionapp.R
 
 
 @Composable
-fun SurveyNewsItem(title:String,subtitle:String ){
+fun InfoCard(subtitle:String,title:String ){
     Card (
         shape = RoundedCornerShape(15.dp),
         elevation = CardDefaults.cardElevation(3.dp),
@@ -68,8 +68,54 @@ fun SurveyNewsItem(title:String,subtitle:String ){
     }
 }
 
+@Composable
+fun InfoCardBig(data:String) {
+    Card(
+        shape = RoundedCornerShape(15.dp),
+        elevation = CardDefaults.cardElevation(3.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color.White
+        ),
+
+        ) {
+        Column(
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(15.dp)
+        ) {
+
+            Text(
+                text = "This Month",
+                fontFamily = FontFamily(Font(R.font.gotham_medium)),
+                fontWeight = FontWeight(500),
+                color = Color.Black,
+                fontSize = 25.sp,
+                textAlign = TextAlign.Start,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(5.dp),
+            )
+
+            Text(
+                text = data + " DA",
+                fontFamily = FontFamily(Font(R.font.gotham_bold)),
+                fontWeight = FontWeight.Bold,
+                fontSize = 48.sp,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(5.dp),
+                textAlign = TextAlign.Start,
+                color = Color.Black
+            )
+        }
+    }
+}
+
+
+
 @Preview
 @Composable
 fun PreviewSurveyNewsItem(){
-    SurveyNewsItem(title = "Survey Title", subtitle = "Survey Description")
+
 }

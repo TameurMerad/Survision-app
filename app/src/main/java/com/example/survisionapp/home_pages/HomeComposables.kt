@@ -175,6 +175,7 @@ fun SurveyNewsItem(title:String,description:String ){
                     fontFamily = FontFamily(Font(R.font.gotham_medium)),
                     fontWeight = FontWeight(300),
                     color = Color(0xFF585858),
+                    lineHeight = 20.sp,
                     fontSize = 16.sp,
                     textAlign = TextAlign.Start,
                     modifier = Modifier
