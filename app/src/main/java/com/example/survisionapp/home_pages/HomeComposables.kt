@@ -27,6 +27,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.graphics.painter.Painter
@@ -42,19 +43,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.survisionapp.R
+import com.example.survisionapp.ui.theme.PurpleGrad
 import com.example.survisionapp.ui.theme.orangeMain
 
 @Composable
 fun WithdrawCard (Amount:Int , WhithdrawDate:String){
     Card (
         shape = RoundedCornerShape(15.dp),
-        colors = CardDefaults.cardColors(
-            contentColor = orangeMain,
-            containerColor = orangeMain
-        ),
         elevation = CardDefaults.cardElevation(10.dp)
 
     ) {
+    Box(modifier = Modifier.background(brush = Brush.horizontalGradient(listOf(Color(0xFF9BE3F2), PurpleGrad)))){
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceEvenly,
@@ -80,7 +79,7 @@ fun WithdrawCard (Amount:Int , WhithdrawDate:String){
                     .padding(15.dp),
                 textAlign = TextAlign.Center,
                 color = Color.White
-                )
+            )
             Text(
                 text ="withdraw on $WhithdrawDate",
                 fontWeight = FontWeight.SemiBold,
@@ -94,6 +93,10 @@ fun WithdrawCard (Amount:Int , WhithdrawDate:String){
 
 
         }
+    }
+
+
+
 
 
     }
@@ -253,6 +256,5 @@ fun BtmNavBarItem(
 @Preview
 @Composable
 fun Previeww ( ){
-    SurveyNewsItem(title = "svfvlkfvmlbfkl", description ="dfd dmnv dkcvbkjfdv djszjldv jfde vif vjlf jv dfj " )
-
+WithdrawCard(Amount = 2000, WhithdrawDate ="15/02" )
 }
