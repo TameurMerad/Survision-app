@@ -53,7 +53,7 @@ fun WithdrawCard (Amount:Int , WhithdrawDate:String){
         elevation = CardDefaults.cardElevation(10.dp)
 
     ) {
-    Box(modifier = Modifier.background(brush = Brush.horizontalGradient(listOf(Color(0xFF9BE3F2), PurpleGrad)))){
+    Box(modifier = Modifier.background(brush = Brush.horizontalGradient(listOf(orangeMain,Color(0xFFF24606))))){
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceEvenly,
