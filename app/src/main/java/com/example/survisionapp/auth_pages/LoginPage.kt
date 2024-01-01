@@ -1,5 +1,6 @@
 package com.example.survisionapp.auth_pages
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -16,17 +17,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.survisionapp.MainActivity
 import com.example.survisionapp.R
 import com.example.survisionapp.globale_composables.BigButton
 
 @Composable
 fun Login (){
-
+    val context = LocalContext.current
     Box(modifier = Modifier
         .fillMaxSize()
         .padding(15.dp)
@@ -50,7 +53,9 @@ fun Login (){
                 )
             Spacer(modifier = Modifier.fillMaxHeight(0.02f))
 
-            BigButton(title = "Login", onClick = {})
+            BigButton(title = "Login", onClick = {
+                context.startActivity(Intent(context,MainActivity::class.java))
+            })
 
 
 

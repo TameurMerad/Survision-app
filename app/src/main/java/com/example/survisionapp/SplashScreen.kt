@@ -56,7 +56,7 @@ class SplashScreen : ComponentActivity() {
             alpha.animateTo(1f,
                 animationSpec = tween(1200)
                 )
-            startActivity(Intent(this@SplashScreen , MainActivity::class.java))
+            startActivity(Intent(this@SplashScreen , AuthActivity::class.java))
             finish()
         })
         Box(
