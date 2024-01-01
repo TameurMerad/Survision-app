@@ -25,6 +25,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -47,7 +48,7 @@ class SplashScreen : ComponentActivity() {
     }
     @SuppressLint("RememberReturnType")
     @Composable
-    fun splashScreen(){
+   public fun splashScreen(){
         val alpha = remember{
             androidx.compose.animation.core.Animatable(0f)
         }
@@ -77,6 +78,11 @@ class SplashScreen : ComponentActivity() {
                     .alpha(alpha.value)
             )
         }
+    }
+    @Composable
+    @Preview
+    fun PreviewSplash(){
+        splashScreen()
     }
 
 

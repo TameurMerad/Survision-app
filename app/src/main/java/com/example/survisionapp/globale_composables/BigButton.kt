@@ -36,7 +36,7 @@ fun BigButton (title : String , onClick :()->Unit) {
                 onClick()
 
             }
-            .padding(bottom = 10.dp),
+            ,
         shape = RoundedCornerShape(15.dp),
         elevation = CardDefaults.cardElevation(13.dp)
 
@@ -61,7 +61,7 @@ fun BigButton (title : String , onClick :()->Unit) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(15.dp),
+                        ,
                     contentAlignment = Alignment.Center
 
                 ) {

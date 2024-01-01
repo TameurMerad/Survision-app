@@ -121,9 +121,6 @@ fun Home(location:String,amount:Int, withdrawDate:String,itemsList: MutableList<
 
             )
         }
-
-
-
     }
     
     
