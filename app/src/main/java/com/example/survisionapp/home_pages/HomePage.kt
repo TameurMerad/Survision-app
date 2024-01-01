@@ -57,70 +57,18 @@ fun Home(location:String,amount:Int, withdrawDate:String,itemsList: MutableList<
                     for (index in itemsList){
                         SurveyNewsItem(title = index.title, description =index.description )
                         Spacer(modifier = Modifier.height(7.dp))
-
-
                     }
+                    Spacer(modifier = Modifier.height(47.dp))
+
                 }
 
             }
         }
 
-        
-// app bar box
-        Box (
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(Color.White),
-            contentAlignment = Alignment.TopCenter
-        ){
-                Row (
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(25.dp)
-                ){
-                    Image(painter = painterResource(
-                        id = R.drawable.logo_with_type),
-                        contentDescription = "",
-                        Modifier
-                            .size(127.dp, 27.dp)
-                    )
-                    Row(horizontalArrangement = Arrangement.SpaceAround,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Image(painter = painterResource(id = R.drawable.map_svg),
-                            contentDescription ="",
-                            Modifier
-                                .size(25.dp, 25.dp)
-                                .padding(end = 5.dp)
-                            )
-                        Text(text = location,
-                            fontFamily = FontFamily(Font(R.font.gotham_medium)),
-                            fontWeight = FontWeight.Medium,
-                            fontSize = 19.sp
-                            )
-                    }
 
 
-                }
-
-        }
 
 
-        Box(modifier = Modifier
-            .fillMaxSize()
-            ,
-            contentAlignment = Alignment.BottomEnd ){
-            BtmNavBar(itemList = listOf(
-                painterResource(id = R.drawable.home),
-                painterResource(id = R.drawable.survey_icon),
-                painterResource(id = R.drawable.dollar_sign_icon),
-                painterResource(id = R.drawable.user_icon)
-            ),
-                modifier = Modifier.height(70.dp)
-
-            )
-        }
     }
     
     

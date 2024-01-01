@@ -192,63 +192,6 @@ fun SurveyNewsItem(title:String,description:String ){
     }
 
 
-@Composable
-
-fun BtmNavBar(
-    itemList: List<Painter>,
-    modifier: Modifier = Modifier,
-    inialSelectedItemIndex: Int = 0
-) {
-    val context = LocalContext.current
-    var selectedItemIndex by remember { mutableStateOf(inialSelectedItemIndex) }
-    Row(
-        horizontalArrangement = Arrangement.SpaceAround,
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(Color.White)
-            .padding(15.dp)
-    ) {
-        itemList.forEachIndexed { index, btmNavData ->
-            BtmNavBarItem(
-                item = btmNavData,
-                isSelected = index == selectedItemIndex,
-                onItemClick = {
-                    selectedItemIndex = index // to do : navigate to the selected screen
-
-
-
-                }
-            )
-        }
-
-
-    }
-
-
-}
-
-
-@Composable
-fun BtmNavBarItem(
-    item: Painter,
-    isSelected: Boolean = false,
-    onItemClick: () -> Unit
-) {
-            Icon(
-                painter = item,
-                contentDescription = "icon",
-                tint = if (isSelected) orangeMain else Color.Black,
-                modifier = Modifier
-                    .size(34.dp)
-                    .clickable {
-                        onItemClick()
-                    }
-            )
-
-}
-
-
 
 
 
