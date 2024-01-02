@@ -116,9 +116,8 @@ fun BtmNavBarItem(
 }
 
 
-data class btmNavBarModel (
-    val selectedIcon : Painter,
-    val unSelectedIcon : Painter,
+data class BtmNavBarModel (
+    val itsIcon : Painter,
     val name : String,
     val badgeCount : Int? = null ,
     val hasNews : Boolean
