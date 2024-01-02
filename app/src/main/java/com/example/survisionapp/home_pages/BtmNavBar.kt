@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import com.example.survisionapp.navigation.BtmNavGraph
 import com.example.survisionapp.ui.theme.orangeMain
 
@@ -47,10 +48,34 @@ fun BtmNavBar(
                 onItemClick = {
                     selectedItemIndex = index // to do : navigate to the selected screen
                     when (index){
-                        0 -> navController.navigate(BtmNavGraph.HomeScreen.route)
-                        1 -> navController.navigate(BtmNavGraph.AllSurveyScreen.route)
-                        2 -> navController.navigate(BtmNavGraph.WithdrawScreen.route)
-                        3 -> navController.navigate(BtmNavGraph.UserScreen.route)
+                        0 -> navController.navigate(BtmNavGraph.HomeScreen.route){
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                        1 -> navController.navigate(BtmNavGraph.AllSurveyScreen.route){
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                        2 -> navController.navigate(BtmNavGraph.WithdrawScreen.route){
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                        3 -> navController.navigate(BtmNavGraph.UserScreen.route){
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
 
                     }
 
