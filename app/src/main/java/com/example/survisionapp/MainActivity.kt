@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -91,17 +92,23 @@ class MainActivity : ComponentActivity() {
                 .fillMaxSize()
                 ,
                 contentAlignment = Alignment.BottomEnd ){
-                BtmNavBar(
-                    navController,
-                    itemList = listOf(
-                    painterResource(id = R.drawable.home),
-                    painterResource(id = R.drawable.survey_icon),
-                    painterResource(id = R.drawable.dollar_sign_icon),
-                    painterResource(id = R.drawable.user_icon)
-                ),
-                    modifier = Modifier.height(70.dp)
 
-                )
+
+//                BtmNavBar(
+//                    navController,
+//                    itemList = listOf(
+//                    painterResource(id = R.drawable.home),
+//                    painterResource(id = R.drawable.survey_icon),
+//                    painterResource(id = R.drawable.dollar_sign_icon),
+//                    painterResource(id = R.drawable.user_icon)
+//                ),
+//                    modifier = Modifier.height(70.dp)
+//
+//                )
+
+                NavigationBar {
+                    BottomNavigationIte
+                }
             }
 
         }

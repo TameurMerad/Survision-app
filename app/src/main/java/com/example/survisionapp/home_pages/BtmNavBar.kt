@@ -1,9 +1,12 @@
 package com.example.survisionapp.home_pages
 
+import android.text.BoringLayout
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -96,15 +99,27 @@ fun BtmNavBarItem(
     isSelected: Boolean = false,
     onItemClick: () -> Unit
 ) {
-    Icon(
-        painter = item,
-        contentDescription = "icon",
-        tint = if (isSelected) orangeMain else Color.Black,
-        modifier = Modifier
-            .size(34.dp)
-            .clickable {
-                onItemClick()
-            }
-    )
+    Box(modifier = Modifier.size(30.dp,30.dp).clickable {
+        onItemClick()
+    }){
+        Icon(
+            painter = item,
+            contentDescription = "icon",
+            tint = if (isSelected) orangeMain else Color.Black,
+            modifier = Modifier
+                .size(34.dp)
+
+        )
+    }
+
 
 }
+
+
+data class btmNavBarModel (
+    val selectedIcon : Painter,
+    val unSelectedIcon : Painter,
+    val name : String,
+    val badgeCount : Int? = null ,
+    val hasNews : Boolean
+)

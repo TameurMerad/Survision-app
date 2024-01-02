@@ -73,6 +73,9 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.1")
     implementation ("androidx.navigation:navigation-compose:2.7.4")
     implementation ("com.google.accompanist:accompanist-systemuicontroller:0.27.0")
+    implementation("androidx.compose.material3:material3:1.1.2")
+    implementation("androidx.compose.material3:material3-window-size-class:1.1.2")
+
 
 
 }

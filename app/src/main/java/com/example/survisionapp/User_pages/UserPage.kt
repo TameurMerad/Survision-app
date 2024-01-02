@@ -43,7 +43,7 @@ fun UserPage() {
                 InfoCard("Total Responses", "200")
                 Spacer(modifier = Modifier.height(10.dp))
                 BigButton("Edit", onClick = {})
-                Spacer(modifier = Modifier.height(47.dp))
+                Spacer(modifier = Modifier.height(50.dp))
 
 
             }
