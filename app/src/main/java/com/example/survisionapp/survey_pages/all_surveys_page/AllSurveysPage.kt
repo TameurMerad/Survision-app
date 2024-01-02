@@ -40,7 +40,7 @@ fun AllSurveysPage () {
 
                     }
                 }
-
+                Spacer(modifier = Modifier.height(47.dp))
             }
         }
     }

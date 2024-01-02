@@ -19,10 +19,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.example.survisionapp.navigation.BtmNavGraph
 import com.example.survisionapp.ui.theme.orangeMain
 
 @Composable
 fun BtmNavBar(
+    navController:NavController,
     itemList: List<Painter>,
     modifier: Modifier = Modifier,
     inialSelectedItemIndex: Int = 0
@@ -43,7 +46,13 @@ fun BtmNavBar(
                 isSelected = index == selectedItemIndex,
                 onItemClick = {
                     selectedItemIndex = index // to do : navigate to the selected screen
+                    when (index){
+                        0 -> navController.navigate(BtmNavGraph.HomeScreen.route)
+                        1 -> navController.navigate(BtmNavGraph.AllSurveyScreen.route)
+                        2 -> navController.navigate(BtmNavGraph.WithdrawScreen.route)
+                        3 -> navController.navigate(BtmNavGraph.UserScreen.route)
 
+                    }
 
 
                 }

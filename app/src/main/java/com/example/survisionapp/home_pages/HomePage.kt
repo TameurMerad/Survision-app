@@ -29,12 +29,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.survisionapp.R
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Home(location:String,amount:Int, withdrawDate:String,itemsList: MutableList<Item>){
+fun Home(navController: NavController,amount:Int, withdrawDate:String,itemsList: MutableList<Item>){
     Scaffold {
         Box(modifier = Modifier
             .fillMaxSize()
@@ -79,5 +80,4 @@ fun Home(location:String,amount:Int, withdrawDate:String,itemsList: MutableList<
 @Preview
 @Composable
 fun Preview (){
-    Home(location = "Azazga",5000,"15/04", itemList.toMutableList())
 }

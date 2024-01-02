@@ -26,9 +26,11 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
+import androidx.navigation.compose.rememberNavController
 import com.example.survisionapp.home_pages.BtmNavBar
 import com.example.survisionapp.home_pages.Home
 import com.example.survisionapp.home_pages.itemList
+import com.example.survisionapp.navigation.Navigation
 import com.example.survisionapp.survey_pages.all_surveys_page.AllSurveysPage
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
@@ -38,10 +40,11 @@ class MainActivity : ComponentActivity() {
 
 
         setContent {
+                val navController = rememberNavController()
                 val colorStatusBar = Color(ContextCompat.getColor(this,R.color.orange_main))
                 rememberSystemUiController().setStatusBarColor(colorStatusBar)
             Box(modifier = Modifier.fillMaxSize()){
-                Home(location = "Amizour", amount =2000  , withdrawDate ="12/02" , itemsList = itemList.toMutableList() )
+                Navigation(navController)
             }
 
 // app bar box
@@ -88,7 +91,9 @@ class MainActivity : ComponentActivity() {
                 .fillMaxSize()
                 ,
                 contentAlignment = Alignment.BottomEnd ){
-                BtmNavBar(itemList = listOf(
+                BtmNavBar(
+                    navController,
+                    itemList = listOf(
                     painterResource(id = R.drawable.home),
                     painterResource(id = R.drawable.survey_icon),
                     painterResource(id = R.drawable.dollar_sign_icon),
