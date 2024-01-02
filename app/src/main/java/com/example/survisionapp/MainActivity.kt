@@ -13,9 +13,16 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarDefaults
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -28,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
 import androidx.navigation.compose.rememberNavController
+import androidx.wear.compose.material.Colors
 import com.example.survisionapp.home_pages.BtmNavBar
 import com.example.survisionapp.home_pages.Home
 import com.example.survisionapp.home_pages.itemList
@@ -41,6 +49,13 @@ class MainActivity : ComponentActivity() {
 
 
         setContent {
+            var selectedItemIndex by remember { mutableStateOf(0) }
+            val itemList = listOf(
+                    painterResource(id = R.drawable.home),
+                    painterResource(id = R.drawable.survey_icon),
+                    painterResource(id = R.drawable.dollar_sign_icon),
+                    painterResource(id = R.drawable.user_icon)
+                )
                 val navController = rememberNavController()
                 val colorStatusBar = Color(ContextCompat.getColor(this,R.color.orange_main))
                 rememberSystemUiController().setStatusBarColor(colorStatusBar)
@@ -107,7 +122,25 @@ class MainActivity : ComponentActivity() {
 //                )
 
                 NavigationBar {
-                    BottomNavigationIte
+                    itemList.forEachIndexed { index, painter ->
+                        NavigationBarItem(
+                            selected = selectedItemIndex == index ,
+                            onClick = {
+                                    selectedItemIndex = index
+                                      /*TODO*/ },
+                            icon = {
+                                Icon(painter = painter, contentDescription = "")
+                            },
+                            colors = androidx.compose.material3.NavigationBarDefaults.Colors(
+                                selectedIconColor = Color.Green,
+                                unselectedIconColor = Color.Gray,
+                                selectedTextColor = Color.Transparent,
+                                indicatorColor = Color.White
+                            )
+
+                        )
+
+                    }
                 }
             }
 
