@@ -34,11 +34,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.rememberNavController
 import androidx.wear.compose.material.Colors
 import com.example.survisionapp.home_pages.BtmNavBar
 import com.example.survisionapp.home_pages.Home
 import com.example.survisionapp.home_pages.itemList
+import com.example.survisionapp.navigation.BtmNavGraph
 import com.example.survisionapp.navigation.Navigation
 import com.example.survisionapp.survey_pages.all_surveys_page.AllSurveysPage
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -127,16 +129,40 @@ class MainActivity : ComponentActivity() {
                             selected = selectedItemIndex == index ,
                             onClick = {
                                     selectedItemIndex = index
-                                      /*TODO*/ },
+                                when (index){
+                                    0 -> navController.navigate(BtmNavGraph.HomeScreen.route){
+                                        popUpTo(navController.graph.findStartDestination().id) {
+                                            saveState = true
+                                        }
+                                        launchSingleTop = true
+                                        restoreState = true
+                                    }
+                                    1 -> navController.navigate(BtmNavGraph.AllSurveyScreen.route){
+                                        popUpTo(navController.graph.findStartDestination().id) {
+                                            saveState = true
+                                        }
+                                        launchSingleTop = true
+                                        restoreState = true
+                                    }
+                                    2 -> navController.navigate(BtmNavGraph.WithdrawScreen.route){
+                                        popUpTo(navController.graph.findStartDestination().id) {
+                                            saveState = true
+                                        }
+                                        launchSingleTop = true
+                                        restoreState = true
+                                    }
+                                    3 -> navController.navigate(BtmNavGraph.UserScreen.route){
+                                        popUpTo(navController.graph.findStartDestination().id) {
+                                            saveState = true
+                                        }
+                                        launchSingleTop = true
+                                        restoreState = true
+                                    }
+
+                                }},
                             icon = {
                                 Icon(painter = painter, contentDescription = "")
-                            },
-                            colors = androidx.compose.material3.NavigationBarDefaults.Colors(
-                                selectedIconColor = Color.Green,
-                                unselectedIconColor = Color.Gray,
-                                selectedTextColor = Color.Transparent,
-                                indicatorColor = Color.White
-                            )
+                            }
 
                         )
 
